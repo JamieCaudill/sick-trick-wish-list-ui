@@ -1,5 +1,9 @@
 // Tricks.js //
 
-export default function Tricks() {
+import './Tricks.css';
 
+export default function Tricks() {
+  return (
+    <
+  )
 }

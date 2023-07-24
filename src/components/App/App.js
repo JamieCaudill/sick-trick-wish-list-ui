@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 
 
 import { getTricks } from '../../api-calls/api-calls';
+import Tricks from '../Tricks/Tricks';
 
 function App() {
   const [error, setError] = useState();
@@ -21,6 +22,7 @@ function App() {
   return (
     <div className="App">
       <h1>Sick Trick Wish List</h1>
+      <Tricks tricks={tricks} />
     </div>
   );
 }

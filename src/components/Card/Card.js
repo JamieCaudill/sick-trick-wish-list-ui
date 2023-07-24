@@ -8,7 +8,7 @@ export default function Card({name, obstacle, tutorial}) {
       <p>{name}</p>
       <p>{`Obstacle: ${obstacle}`}</p>
       <p>Link to Tutorial:</p>
-      <p>{tutorial}</p>
+      <a href={tutorial}>{tutorial}</a>
     </div>
   )
 }

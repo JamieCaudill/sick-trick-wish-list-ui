@@ -29,7 +29,7 @@ export default function Form({tricks, addTrick}) {
           <option value="Regular">Regular</option>
           <option value="Switch">Switch</option>
         </select>
-        <input className="form__item" type="text" placeholder="Name of Trick" onChange={(e) => setTrickName(e.target.value)} />
+        <input className="form__item" id="trick__name" type="text" placeholder="Name of Trick" onChange={(e) => setTrickName(e.target.value)} />
         <select className="form__item" id="obstacle" value={obstacle} onChange={(e) => setObstacle(e.target.value)}>
           <option value="">Choose your Obstacle</option>
           <option value="flatground">Flatground</option>
@@ -38,8 +38,8 @@ export default function Form({tricks, addTrick}) {
           <option value="stairs">Stairs</option>
           <option value="pool">Pool</option>
         </select>
-        <input className="form__item" type="text" placeholder="Link to Tutorial" onChange={(e) => setTutorialLink(e.target.value)}/>
-        <button className="form__item" type="submit" onClick={(e) => handleSubmit(e)}>Send It!</button>
+        <input className="form__item" id="tutorial" type="text" placeholder="Link to Tutorial" onChange={(e) => setTutorialLink(e.target.value)}/>
+        <button className="form__item" id="submit__trick" type="submit" onClick={(e) => handleSubmit(e)}>Send It!</button>
       </form>
     </div>
   )

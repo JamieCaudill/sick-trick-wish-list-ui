@@ -1,6 +1,7 @@
 describe('home page', () => {
   beforeEach(() => {
     cy.intercept('GET', 'http://localhost:3001/api/v1/tricks', { fixture: 'sampleTricks.json' }).as('getTricks');
+    cy.intercept('POST', 'http://localhost:3001/api/v1/tricks', { stance: 'switch', name: 'Redneck Bono', obstacle: 'pool', tutorial: 'http://example.com', id: 9 }).as('postTrick');
     cy.visit('http://localhost:3000/')
   })
 
@@ -56,6 +57,8 @@ describe('home page', () => {
 
     cy.get('#submit__trick')
       .click()
+    
+    cy.wait('@postTrick')
     
     cy.get('.card').should('have.length', 4)
   })

@@ -24,9 +24,9 @@ function App() {
     postNewTrick(newTrick)
     .then(data => {
       console.log(data)
+      setTricks([...tricks, data])
     })
     .catch(error => console.log(error))
-    setTricks([...tricks, newTrick])
   }
 
   return (

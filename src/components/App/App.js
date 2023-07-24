@@ -3,7 +3,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 
 
-import { getTricks } from '../../api-calls/api-calls';
+import { getTricks, postNewTrick } from '../../api-calls/api-calls';
 import Tricks from '../Tricks/Tricks';
 import Form
  from '../Form/Form';
@@ -21,6 +21,11 @@ function App() {
   },[])
 
   const addTrick = (newTrick) => {
+    postNewTrick(newTrick)
+    .then(data => {
+      console.log(data)
+    })
+    .catch(error => console.log(error))
     setTricks([...tricks, newTrick])
   }
 

@@ -13,4 +13,20 @@ function getTricks() {
   })
 }
 
-export { getTricks }
+function postNewTrick(newTrick) {
+  return fetch('http://localhost:3001/api/v1/tricks', {
+    method: 'POST',
+    body: JSON.stringify(newTrick),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => {
+    if(!response.ok) {
+      throw new Error(`${response.status}: ${response.statusText}`)
+    }
+    return response.json();
+  })
+}
+
+export { getTricks, postNewTrick }

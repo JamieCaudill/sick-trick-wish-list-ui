@@ -20,10 +20,14 @@ function App() {
       // print error on DOM
   },[])
 
+  const addTrick = (newTrick) => {
+    setTricks([...tricks, newTrick])
+  }
+
   return (
     <div className="App">
       <h1>Sick Trick Wish List</h1>
-      <Form />
+      <Form tricks={tricks} addTrick={addTrick}/>
       <Tricks tricks={tricks} />
     </div>
   );
